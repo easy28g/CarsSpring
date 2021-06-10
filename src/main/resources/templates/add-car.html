@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add car</title>
+    <style>
+        form{
+            margin-left: 550px;
+            margin-top: 130px;
+        }
+        .myButton{
+            font-size: 43px;
+            margin-top: 10px;
+            letter-spacing: 0.008em;
+            font-weight: 100;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form th:method="POST" th:action="@{/sendCarForm}" th:object="${car}">
+        <label for="mark">Mark</label><br>
+        <input type="text" th:field="*{mark}" id="mark">
+        <br>
+        <label for="color">Color</label><br>
+        <input type="text" th:field="*{color}" id="color">
+        <br>
+        <label for="year">Year</label><br>
+        <input type="number" th:field="*{year}" id="year">
+        <br>
+
+        <input class="myButton" type="submit" value="addCar">
+    </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

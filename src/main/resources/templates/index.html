@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         h2{
+            padding-left: 465px;
+         }
+         .myButton{
+            margin-left: 460px;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container" th:switch="${cars}">
+        <h2 style="color: white;" th:case="null">No cars yet!</h2>
+        <div th:case="*">
+            <h2 style="font-weight: 700;letter-spacing: 0.079em; color: white;">Cars</h2>
+
+            <table class="table table-dark table-striped">
+                <thead>
+                <tr>
+                    <th>Mark</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="car : ${cars}">
+                    <td> <a th:text="${car.mark}" th:href="@{/show/{id}(id=${car.id})}"></a></td>
+                    <td th:text="${car.color}"></td>
+                    <td th:text="${car.year}"></td>
+                    <td> <a th:href="@{/edit/{id}(id=${car.id})}">Edit</a></td>
+                    <td> <a th:href="@{/delete/{id}(id=${car.id})}">Delete</a></td>
+<!--                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>-->
+<!--                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>-->
+<!--                    <td><a th:href="@{/resume/{id}(id=${user.id})}">Resume</a></td>-->
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <button class="myButton"><a href="/signup" class="btn btn-success">Add a new car</a></button>
+    </div>
+</body>
+</html>

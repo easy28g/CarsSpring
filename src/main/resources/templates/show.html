@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowCar</title>
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <style>
+   table{
+    border: 4px double black;
+    padding: 10px;
+    margin-left: 600px;
+    margin-top: 150px;
+   }
+
+  </style>
+</head>
+<body>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Mark</th>
+        </tr>
+        </thead>
+        <tbody>
+            <td th:text="${car.getId()}"></td>
+            <td th:text="${car.getMark()}"></td>
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
